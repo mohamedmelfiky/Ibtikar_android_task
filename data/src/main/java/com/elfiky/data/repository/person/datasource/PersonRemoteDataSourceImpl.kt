@@ -4,7 +4,7 @@ import com.elfiky.data.network.api.MoviesApi
 import com.elfiky.data.network.entities.PersonApi
 import com.elfiky.data.network.entities.PersonImagesApi
 
-class PersonRemoteDataSourceImpl(
+internal class PersonRemoteDataSourceImpl(
     private val api: MoviesApi
 ) : PersonRemoteDataSource {
     override suspend fun fetchDetails(id: Int): PersonApi {

@@ -7,7 +7,7 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object Network {
+internal object Network {
 
     private const val baseHost = "api.themoviedb.org/3/"
     private const val baseUrl = "https://$baseHost"

@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.map
 
 private const val DEFAULT_PAGE_SIZE = 20
 
-class PersonOverviewRepositoryImpl(
+internal class PersonOverviewRepositoryImpl(
     private val pagingSource: PagingSource<Int, PersonOverviewApi>,
     private val pagingConfig: PagingConfig = PagingConfig(DEFAULT_PAGE_SIZE),
 ) : PersonOverviewRepository<PagingData<PersonOverview>> {

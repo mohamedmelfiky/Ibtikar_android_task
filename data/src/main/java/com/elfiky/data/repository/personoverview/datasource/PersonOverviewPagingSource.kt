@@ -4,7 +4,7 @@ import androidx.paging.PagingSource
 import com.elfiky.data.network.api.MoviesApi
 import com.elfiky.data.network.entities.PersonOverviewApi
 
-class PersonOverviewPagingSource(
+internal class PersonOverviewPagingSource(
     private val api: MoviesApi
 ) : PagingSource<Int, PersonOverviewApi>() {
     override suspend fun load(
