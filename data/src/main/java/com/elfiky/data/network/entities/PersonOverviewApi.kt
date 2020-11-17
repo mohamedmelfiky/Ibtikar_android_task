@@ -24,7 +24,7 @@ internal data class PersonOverviewApi(
     val name: String,
     val gender: Int,
     val popularity: Float,
-    val profile_path: String,
+    val profile_path: String?,
     val known_for_department: String,
     val known_for: List<KnownForApi>
 )
@@ -36,7 +36,7 @@ internal fun PersonOverviewApi.toPersonOverview(width: Int = 500): PersonOvervie
     return PersonOverview(
         id = PersonId(id),
         name = PersonName(name),
-        image = ImageThumbnail("${Network.imagesBaseUrl}w$width$profile_path"),
+        image = if (profile_path != null) ImageThumbnail("${Network.imagesBaseUrl}w$width$profile_path") else null,
         knownFor = KnownFor(knownFor)
     )
 }
