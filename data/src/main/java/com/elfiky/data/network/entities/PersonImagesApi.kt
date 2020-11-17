@@ -7,17 +7,17 @@ import com.elfiky.domain.entities.ProfileImage
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class ProfileApi(
+internal data class ProfileApi(
     val file_path: String,
 )
 
 @JsonClass(generateAdapter = true)
-data class PersonImagesApi(
+internal data class PersonImagesApi(
     val id: Int,
     val profiles: List<ProfileApi>
 )
 
-fun ProfileApi.toProfileImage(width: Int = 500): ProfileImage {
+internal fun ProfileApi.toProfileImage(width: Int = 500): ProfileImage {
     return ProfileImage(
         thumbnail = ImageThumbnail("${Network.imagesBaseUrl}w$width$file_path"),
         original = ImageOriginal("${Network.imagesBaseUrl}original$file_path"),

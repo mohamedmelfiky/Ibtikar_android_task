@@ -9,7 +9,7 @@ import com.elfiky.domain.entities.PersonOverview
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class KnownForApi(
+internal data class KnownForApi(
     val id: Int,
     val title: String?,
     val original_title: String?,
@@ -19,7 +19,7 @@ data class KnownForApi(
 )
 
 @JsonClass(generateAdapter = true)
-data class PersonOverviewApi(
+internal data class PersonOverviewApi(
     val id: Int,
     val name: String,
     val gender: Int,
@@ -29,7 +29,7 @@ data class PersonOverviewApi(
     val known_for: List<KnownForApi>
 )
 
-fun PersonOverviewApi.toPersonOverview(width: Int = 500): PersonOverview {
+internal fun PersonOverviewApi.toPersonOverview(width: Int = 500): PersonOverview {
     val knownFor = known_for.joinToString(",") {
         it.original_title ?: (it.title ?: (it.name ?: ""))
     }

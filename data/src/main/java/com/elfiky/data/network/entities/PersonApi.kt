@@ -14,7 +14,7 @@ import com.elfiky.domain.entities.Place
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class PersonApi(
+internal data class PersonApi(
     val id: Int,
     val name: String,
     val also_known_as: List<String>,
@@ -27,7 +27,7 @@ data class PersonApi(
     val deathday: String?,
 )
 
-fun PersonApi.toPersonDetails(width: Int = 500): PersonDetails {
+internal fun PersonApi.toPersonDetails(width: Int = 500): PersonDetails {
     val gender = when(gender) {
         0 -> Gender.Male
         1 -> Gender.Female

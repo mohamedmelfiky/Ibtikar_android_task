@@ -13,7 +13,7 @@ import com.elfiky.domain.repository.PersonRepository
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 
-class PersonRepositoryImpl(
+internal class PersonRepositoryImpl(
     private val remoteDataSource: PersonRemoteDataSource
 ) : PersonRepository {
 
