@@ -1,7 +1,7 @@
 package com.elfiky.domain.entities
 
 inline class PersonId(val value: Int)
-inline class PersonName(val value: Int)
+inline class PersonName(val value: String)
 inline class Department(val name: String)
 inline class Biography(val value: String)
 inline class ImageThumbnail(val url: String)
@@ -15,7 +15,6 @@ data class PersonDetails(
     val name: PersonName,
     val otherKnownNames: List<PersonName>,
     val thumbnail: ImageThumbnail,
-    val popularity: Float,
     val gender: Gender,
     val department: Department,
     val biography: Biography,
