@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Ibtikar Android Task</string>
+
+    <string name="retry">Retry</string>
+    <string name="no_items_were_found">No items were found.</string>
+
+    <string name="error_network">Network connection issue. Please check your connection.</string>
+    <string name="error_invalid_api_key">Invalid credentials</string>
+    <string name="error_not_found">Not found!</string>
+    <string name="error_unknown">Some thing went wrong.</string>
+
+    <string name="desc_person_image">person image</string>
+    <string name="desc_error_icon">error icon</string>
+    <string name="desc_sad_face_icon">sad face icon</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.elfiky.data.network
 
+import com.elfiky.data.extinsions.toFailure
 import com.elfiky.domain.entities.Failures
 import com.elfiky.domain.entities.InvalidApiKey
 import com.elfiky.domain.entities.NetworkFailure
@@ -16,17 +17,7 @@ internal suspend inline fun <T : Any> safeApiCall(
         val result = block()
         Result.Success(result)
     } catch (e: Exception) {
-        val error = when (e) {
-            is IOException -> NetworkFailure
-            is HttpException -> {
-                when (e.code()) {
-                    401 -> InvalidApiKey
-                    404 -> NotFound
-                    else -> UnknownFailure
-                }
-            }
-            else -> UnknownFailure
-        }
-        Result.Failure(error)
+        e.printStackTrace()
+        Result.Failure(e.toFailure())
     }
 }

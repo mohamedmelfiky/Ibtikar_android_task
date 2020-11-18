@@ -9,5 +9,7 @@
     <color name="brown_300">#FFc68b5b</color>
 
     <color name="black">#FF000000</color>
+    <color name="black_30">#4D000000</color>
+
     <color name="white">#FFFFFFFF</color>
 </resources>
