@@ -29,8 +29,8 @@ internal data class PersonApi(
 
 internal fun PersonApi.toPersonDetails(width: Int = 500): PersonDetails {
     val gender = when(gender) {
-        0 -> Gender.Male
         1 -> Gender.Female
+        2 -> Gender.Male
         else -> Gender.Unknown
     }
     return PersonDetails(

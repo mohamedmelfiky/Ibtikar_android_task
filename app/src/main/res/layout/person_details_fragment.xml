@@ -1,29 +1,326 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/image_viewer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="go to next"
-        app:layout_constraintBottom_toTopOf="@id/list"
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?colorPrimary"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to prev"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_img"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/desc_back_button"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:src="@drawable/ic_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="?colorOnPrimary" />
+
+            <TextView
+                android:id="@+id/personNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="?textAppearanceHeadline5"
+                android:textColor="?colorOnPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/back_img"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Pedro Pascal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_viewer" />
+        app:layout_constraintTop_toBottomOf="@id/tool_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/success_cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/half_gl"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ImageView
+                android:id="@+id/person_img"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/desc_person_image"
+                app:layout_constraintDimensionRatio="0.6"
+                app:layout_constraintEnd_toStartOf="@id/half_gl"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/known_for_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/known_for"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/half_gl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/known_for_value_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/known_for_tv"
+                tools:text="Acting" />
+
+            <TextView
+                android:id="@+id/gender_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/gender"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/known_for_value_tv" />
+
+            <TextView
+                android:id="@+id/gender_value_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/gender_tv"
+                tools:text="Male" />
+
+            <TextView
+                android:id="@+id/birthday_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/birthday"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/gender_value_tv" />
+
+            <TextView
+                android:id="@+id/birthday_value_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/birthday_tv"
+                tools:text="1975-04-02" />
+
+            <TextView
+                android:id="@+id/place_of_birth_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/place_of_birth"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/birthday_value_tv" />
+
+            <TextView
+                android:id="@+id/place_of_birth_value_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/place_of_birth_tv"
+                tools:text="Santiago, Chile" />
+
+            <TextView
+                android:id="@+id/also_known_as_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/also_known_as"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/place_of_birth_value_tv" />
+
+            <TextView
+                android:id="@+id/also_known_as_value_tv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="@id/person_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintTop_toBottomOf="@id/also_known_as_tv"
+                app:layout_constraintVertical_bias="0"
+                tools:text="Jose Pedro Bal" />
+
+            <TextView
+                android:id="@+id/profile_images_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/profile_images"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/person_img" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/images_rv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profile_images_tv"
+                tools:itemCount="10"
+                tools:listitem="@layout/profile_image_item" />
+
+            <TextView
+                android:id="@+id/biography_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/biography"
+                android:textAppearance="?textAppearanceBody1"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/images_rv" />
+
+            <TextView
+                android:id="@+id/biography_value_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="?textAppearanceOverline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/biography_tv"
+                app:layout_constraintTop_toBottomOf="@id/biography_tv"
+                tools:text="A Chilean-born Amercian stage and screen director and actor, best known for his portrayal of Oberyn Martell in the HBO series Game of Thrones and of Javier Peña in the Netflix series Narcos. He studied acting at the Orange County High School of the Arts and New York University's Tisch School of the Arts." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/loading_pr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/error_cl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar">
+
+        <ImageView
+            android:id="@+id/error_img"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:contentDescription="@string/desc_error_icon"
+            android:src="@drawable/ic_error_24"
+            app:layout_constraintBottom_toTopOf="@id/error_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:tint="?colorError" />
+
+        <TextView
+            android:id="@+id/error_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textAlignment="center"
+            android:textAppearance="?textAppearanceBody1"
+            app:layout_constraintBottom_toTopOf="@id/retry_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_img"
+            tools:text="@string/error_unknown" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retry_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/retry"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/error_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

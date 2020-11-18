@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">Ibtikar Android Task</string>
 
-    <string name="retry">Retry</string>
-    <string name="no_items_were_found">No items were found.</string>
-
     <string name="error_network">Network connection issue. Please check your connection.</string>
     <string name="error_invalid_api_key">Invalid credentials</string>
     <string name="error_not_found">Not found!</string>
@@ -12,4 +9,17 @@
     <string name="desc_person_image">person image</string>
     <string name="desc_error_icon">error icon</string>
     <string name="desc_sad_face_icon">sad face icon</string>
+    <string name="desc_back_button">back button</string>
+
+    <string name="retry">Retry</string>
+    <string name="no_items_were_found">No items were found.</string>
+    <string name="known_for">Known For</string>
+    <string name="gender">Gender</string>
+    <string name="birthday">Birthday</string>
+    <string name="biography">Biography</string>
+    <string name="also_known_as">Also Known As</string>
+    <string name="place_of_birth">Place of birth</string>
+    <string name="unknown">Unknown</string>
+    <string name="no_other_names">No other names</string>
+    <string name="profile_images">Profile Images</string>
 </resources>
