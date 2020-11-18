@@ -130,7 +130,8 @@ class PopularListFragment : Fragment() {
     private fun onItemClicked(item: PersonOverview) {
         findNavController().navigate(
             PopularListFragmentDirections.actionPopularListFragmentToPersonDetailsFragment(
-                item.id.value
+                id = item.id.value,
+                name = item.name.value
             )
         )
     }
