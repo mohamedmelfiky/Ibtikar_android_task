@@ -16,9 +16,11 @@ import com.elfiky.domain.entities.PersonId
 import com.elfiky.domain.entities.PersonName
 import com.elfiky.domain.entities.ProfileImage
 import com.elfiky.domain.entities.Result
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
 
+@ExperimentalCoroutinesApi
 class PersonRepositoryImplTest {
 
     @Test
@@ -29,7 +31,7 @@ class PersonRepositoryImplTest {
                     id,
                     "test name",
                     emptyList(),
-                    0,
+                    2,
                     "test department",
                     "test bio",
                     "/zLTq39cdRjS43dEzb78c1p1QcbT.jpg",

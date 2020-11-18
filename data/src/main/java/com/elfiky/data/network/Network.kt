@@ -14,7 +14,7 @@ internal object Network {
     private const val imagesHost = "image.tmdb.org/t/p/"
     internal const val imagesBaseUrl = "https://$imagesHost"
 
-    fun okHttp(apiKeyInterceptor: Interceptor, ): OkHttpClient {
+    fun okHttp(apiKeyInterceptor: Interceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(apiKeyInterceptor)
             .build()
