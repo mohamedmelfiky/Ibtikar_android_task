@@ -112,7 +112,8 @@ class PersonDetailsFragment : Fragment() {
     private fun onItemClicked(profileImage: ProfileImage) {
         findNavController().navigate(
             PersonDetailsFragmentDirections.actionPersonDetailsFragmentToImageViewerFragment(
-                profileImage.original.url
+                originalUrl = profileImage.original.url,
+                name = args.name
             )
         )
     }
