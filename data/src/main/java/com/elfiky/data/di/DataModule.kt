@@ -14,7 +14,6 @@ import com.elfiky.domain.entities.PersonOverview
 import com.elfiky.domain.repository.PersonOverviewRepository
 import com.elfiky.domain.repository.PersonRepository
 import okhttp3.Interceptor
-import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.Converter
 

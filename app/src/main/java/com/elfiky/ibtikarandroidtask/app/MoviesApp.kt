@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.elfiky.ibtikarandroidtask.app
 
 import android.app.Application
