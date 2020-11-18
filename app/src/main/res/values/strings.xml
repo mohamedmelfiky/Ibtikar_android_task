@@ -7,6 +7,7 @@
     <string name="error_unknown">Some thing went wrong.</string>
 
     <string name="desc_person_image">person image</string>
+    <string name="desc_original_person_image">original person image</string>
     <string name="desc_error_icon">error icon</string>
     <string name="desc_sad_face_icon">sad face icon</string>
     <string name="desc_back_button">back button</string>
@@ -22,4 +23,8 @@
     <string name="unknown">Unknown</string>
     <string name="no_other_names">No other names</string>
     <string name="profile_images">Profile Images</string>
+    <string name="download_started">Download started</string>
+    <string name="download_completed">Download completed in pictures</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="download">Download</string>
 </resources>

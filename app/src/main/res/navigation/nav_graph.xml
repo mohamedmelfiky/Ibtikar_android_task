@@ -35,7 +35,10 @@
         android:label="ImageViewerFragment"
         tools:layout="@layout/image_viewer_fragment" >
         <argument
-            android:name="url"
+            android:name="originalUrl"
+            app:argType="string" />
+        <argument
+            android:name="name"
             app:argType="string" />
     </fragment>
 </navigation>
