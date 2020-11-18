@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="teal_700">#FF204d48</color>
-    <color name="teal_900">#FF204d48</color>
+    <color name="teal_900">#153330</color>
 
-    <color name="brown_700">#FF623406</color>
-    <color name="brown_500">#FF935e30</color>
+    <color name="brown_700">#753F08</color>
+    <color name="brown_500">#B8763D</color>
 
     <color name="black">#FF000000</color>
     <color name="black_30">#4D000000</color>

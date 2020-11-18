@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tool_bar"
         android:layout_width="0dp"
@@ -91,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:text="@string/known_for"
-                android:textAppearance="?textAppearanceBody1"
+                android:textAppearance="?textAppearanceHeadline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/half_gl"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -100,9 +99,9 @@
                 android:id="@+id/known_for_value_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
-                android:textAppearance="?textAppearanceOverline"
+                android:textAppearance="?textAppearanceBody2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/known_for_tv"
@@ -115,7 +114,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@string/gender"
-                android:textAppearance="?textAppearanceBody1"
+                android:textAppearance="?textAppearanceHeadline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/known_for_value_tv" />
@@ -124,9 +123,9 @@
                 android:id="@+id/gender_value_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
-                android:textAppearance="?textAppearanceOverline"
+                android:textAppearance="?textAppearanceBody2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/gender_tv"
@@ -139,7 +138,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@string/birthday"
-                android:textAppearance="?textAppearanceBody1"
+                android:textAppearance="?textAppearanceHeadline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/gender_value_tv" />
@@ -148,9 +147,9 @@
                 android:id="@+id/birthday_value_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
-                android:textAppearance="?textAppearanceOverline"
+                android:textAppearance="?textAppearanceBody2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/birthday_tv"
@@ -163,7 +162,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="@string/place_of_birth"
-                android:textAppearance="?textAppearanceBody1"
+                android:textAppearance="?textAppearanceHeadline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/birthday_value_tv" />
@@ -172,9 +171,9 @@
                 android:id="@+id/place_of_birth_value_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
-                android:textAppearance="?textAppearanceOverline"
+                android:textAppearance="?textAppearanceBody2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/known_for_tv"
                 app:layout_constraintTop_toBottomOf="@id/place_of_birth_tv"
@@ -184,28 +183,24 @@
                 android:id="@+id/also_known_as_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/also_known_as"
-                android:textAppearance="?textAppearanceBody1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/known_for_tv"
-                app:layout_constraintTop_toBottomOf="@id/place_of_birth_value_tv" />
+                android:textAppearance="?textAppearanceHeadline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/person_img" />
 
             <TextView
                 android:id="@+id/also_known_as_value_tv"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="8dp"
                 android:textAlignment="viewStart"
-                android:textAppearance="?textAppearanceOverline"
-                app:layout_constrainedHeight="true"
-                app:layout_constraintBottom_toBottomOf="@id/person_img"
+                android:textAppearance="?textAppearanceBody2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/known_for_tv"
+                app:layout_constraintStart_toStartOf="@id/also_known_as_tv"
                 app:layout_constraintTop_toBottomOf="@id/also_known_as_tv"
-                app:layout_constraintVertical_bias="0"
                 tools:text="Jose Pedro Bal" />
 
             <TextView
@@ -215,21 +210,22 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/profile_images"
-                android:textAppearance="?textAppearanceBody1"
+                android:textAppearance="?textAppearanceHeadline6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/person_img" />
+                app:layout_constraintTop_toBottomOf="@id/also_known_as_value_tv" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/images_rv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:clipToPadding="false"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="8dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/profile_images_tv"
+                app:spanCount="3"
                 tools:itemCount="10"
                 tools:listitem="@layout/profile_image_item" />
 
@@ -240,7 +236,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/biography"
-                android:textAppearance="?textAppearanceBody1"
+                android:textAppearance="?textAppearanceHeadline6"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/images_rv" />
@@ -252,7 +248,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
-                android:textAppearance="?textAppearanceOverline"
+                android:textAppearance="?textAppearanceBody2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/biography_tv"

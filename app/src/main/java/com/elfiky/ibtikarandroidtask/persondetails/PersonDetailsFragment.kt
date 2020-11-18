@@ -85,13 +85,14 @@ class PersonDetailsFragment : Fragment(R.layout.person_details_fragment) {
             personImg.load(details.thumbnail.url) {
                 crossfade(true)
                 transformations(RoundedCornersTransformation(16f))
+                placeholder(R.drawable.image_place_holder)
             }
             knownForValueTv.text = details.department.name
             genderValueTv.text = details.gender.name
             birthdayValueTv.text = details.birthday?.date ?: getString(R.string.unknown)
             placeOfBirthValueTv.text = details.placeOfBirth?.name ?: getString(R.string.unknown)
             alsoKnownAsValueTv.text =
-                details.otherKnownNames.joinToString("\n", limit = 6) { it.value }.ifEmpty {
+                details.otherKnownNames.joinToString(", ") { it.value }.ifEmpty {
                     getString(R.string.no_other_names)
                 }
             biographyValueTv.text = details.biography.value
