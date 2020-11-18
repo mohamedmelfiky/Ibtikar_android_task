@@ -1,9 +1,7 @@
 package com.elfiky.ibtikarandroidtask.persondetails
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -18,27 +16,18 @@ import com.elfiky.domain.entities.ProfileImage
 import com.elfiky.domain.entities.UnknownFailure
 import com.elfiky.ibtikarandroidtask.R
 import com.elfiky.ibtikarandroidtask.databinding.PersonDetailsFragmentBinding
+import com.elfiky.ibtikarandroidtask.delegates.viewBinding
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class PersonDetailsFragment : Fragment() {
+class PersonDetailsFragment : Fragment(R.layout.person_details_fragment) {
 
-    private var _binding: PersonDetailsFragmentBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(PersonDetailsFragmentBinding::bind)
     private val args: PersonDetailsFragmentArgs by navArgs()
     private val viewModel: PersonDetailsViewModel by viewModel { parametersOf(args.id) }
     private val adapter = ProfileImageAdapter(onClick = ::onItemClicked)
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = PersonDetailsFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -116,10 +105,5 @@ class PersonDetailsFragment : Fragment() {
                 name = args.name
             )
         )
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

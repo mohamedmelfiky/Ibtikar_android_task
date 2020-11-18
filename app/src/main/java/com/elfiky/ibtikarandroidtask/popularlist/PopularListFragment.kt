@@ -1,9 +1,7 @@
 package com.elfiky.ibtikarandroidtask.popularlist
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
@@ -18,26 +16,17 @@ import com.elfiky.domain.entities.NetworkFailure
 import com.elfiky.domain.entities.PersonOverview
 import com.elfiky.ibtikarandroidtask.R
 import com.elfiky.ibtikarandroidtask.databinding.PopularListFragmentBinding
+import com.elfiky.ibtikarandroidtask.delegates.viewBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class PopularListFragment : Fragment() {
+class PopularListFragment : Fragment(R.layout.popular_list_fragment) {
 
-    private var _binding: PopularListFragmentBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(PopularListFragmentBinding::bind)
     private val viewModel by viewModel<PopularListViewModel>()
     private val adapter = PopularAdapter(onClick = ::onItemClicked)
     private val loadStateLiveData = adapter.loadStateFlow.asLiveData()
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = PopularListFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -134,10 +123,5 @@ class PopularListFragment : Fragment() {
                 name = item.name.value
             )
         )
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
